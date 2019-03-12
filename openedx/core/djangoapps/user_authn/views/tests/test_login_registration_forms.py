@@ -149,7 +149,7 @@ class LoginFormTest(ThirdPartyAuthTestMixin, UrlResetMixin, SharedModuleStoreTes
 
         # Verify that the parameters are sent on to the next page correctly
         post_login_handler = _finish_auth_url(params)
-        js_success_var = 'var nextUrl = "{}";'.format(js_escaped_string(post_login_handler))
+        js_success_var = u'var nextUrl = "{}";'.format(js_escaped_string(post_login_handler))
         self.assertContains(response, js_success_var)
 
         # Verify that the login link preserves the querystring params
@@ -225,11 +225,7 @@ class RegisterFormTest(ThirdPartyAuthTestMixin, UrlResetMixin, SharedModuleStore
 
         # Verify that the parameters are sent on to the next page correctly
         post_login_handler = _finish_auth_url(params)
-<<<<<<< HEAD
-        js_success_var = u'var nextUrl = "{}";'.format(post_login_handler)
-=======
-        js_success_var = 'var nextUrl = "{}";'.format(js_escaped_string(post_login_handler))
->>>>>>> da73dab... Fix test + xss-lint violations except mako-missing-default
+        js_success_var = u'var nextUrl = "{}";'.format(js_escaped_string(post_login_handler))
         self.assertContains(response, js_success_var)
 
         # Verify that the login link preserves the querystring params
