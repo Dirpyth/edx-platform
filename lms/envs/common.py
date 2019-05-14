@@ -196,6 +196,7 @@ FEATURES = {
 
     # Toggle to enable certificates of courses on dashboard
     'ENABLE_VERIFIED_CERTIFICATES': False,
+    'DISABLE_HONOR_CERTIFICATES': False,
 
     # for acceptance and load testing
     'AUTOMATIC_AUTH_FOR_TESTING': False,
