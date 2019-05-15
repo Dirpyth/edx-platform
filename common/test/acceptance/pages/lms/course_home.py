@@ -303,6 +303,10 @@ class CourseOutlinePage(PageObject):
         self._expand_all_outline_folds()
         return self.q(css=self._subsection_selector).results
 
+    def get_subsection_due_date(self, index=0):
+        results = self.q(css='div.details > span.subtitle > span.subtitle-name').results
+        return results[index].text
+
     def _expand_all_outline_folds(self):
         '''
         Expands all parts of the collapsible outline.
