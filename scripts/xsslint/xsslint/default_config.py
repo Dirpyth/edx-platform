@@ -43,11 +43,7 @@ MAKO_LINTER = MakoTemplateLinter(
     python_linter=PYTHON_LINTER,
     skip_dirs=MAKO_SKIP_DIRS
 )
-DJANGO_SKIP_DIRS = SKIP_DIRS
-DJANGO_LINTER = DjangoTemplateLinter(
-    skip_dirs=DJANGO_SKIP_DIRS
-)
+
 
 # (Required) Define the linters (code-checkers) that should be run by the script.
-#LINTERS = (DJANGO_LINTER, MAKO_LINTER, UNDERSCORE_LINTER, JAVASCRIPT_LINTER, PYTHON_LINTER)
-LINTERS = (DJANGO_LINTER,)
+LINTERS = (MAKO_LINTER, UNDERSCORE_LINTER, JAVASCRIPT_LINTER, PYTHON_LINTER)

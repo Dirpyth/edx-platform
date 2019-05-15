@@ -1,8 +1,6 @@
-## xss-lint: disable=mako-missing-default
 <%namespace name='static' file='../static_content.html'/>
 <%!
 from django.utils.translation import ugettext as _
-from openedx.core.djangolib.markup import HTML, Text
 from django.urls import reverse
 %>
 
@@ -12,16 +10,16 @@ from django.urls import reverse
       <span class="icon fa fa-remove" aria-hidden="true"></span>
       <span class="sr">
         ## Translators: this is a control to allow users to exit out of this modal interface (a menu or piece of UI that takes the full focus of the screen)
-        ${_('Close') | h}
+        ${_('Close')}
       </span>
     </button>
 
     <header>
       <h2>
-        <span id="change_language_title">${_("Change Preferred Language") | h}</span>
+        <span id="change_language_title">${_("Change Preferred Language")}</span>
         <span class="sr">,
           ## Translators: this text gives status on if the modal interface (a menu or piece of UI that takes the full focus of the screen) is open or not
-          ${_("window open") | h}
+          ${_("window open")}
         </span>
       </h2>
       <hr/>
@@ -31,7 +29,7 @@ from django.urls import reverse
       <input type="hidden" name="csrfmiddlewaretoken" value="${csrf_token}">
         <ol class="list-input">
           <li class="field text settings-language-select" id="settings-language-select">
-            <label class="label sr" for="settings-language-value">${_("Please choose your preferred language") | h}</label>
+            <label class="label sr" for="settings-language-value">${_("Please choose your preferred language")}</label>
             <select class="input select" id="settings-language-value" name="language">
             % for abbrv in language_options:
               % for language in settings.LANGUAGES:
@@ -55,11 +53,11 @@ from django.urls import reverse
 
       <ul class="list list-actions actions-supplemental">
         <li class="list-actions-item">
-        ${Text(_("Don't see your preferred language? {link_start}Volunteer to become a translator!{link_end}")).format(
-          link_start=HTML('<a class=" action action-volunteer" rel="external" target="_blank" href={translators_guide}>').format(
+        ${_("Don't see your preferred language? {link_start}Volunteer to become a translator!{link_end}").format(
+          link_start='<a class=" action action-volunteer" rel="external" target="_blank" href={translators_guide}>'.format(
             translators_guide=settings.TRANSLATORS_GUIDE
           ),
-          link_end=HTML("</a>")
+          link_end="</a>"
         )}
         </li>
       </ul>

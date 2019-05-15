@@ -1,4 +1,3 @@
-## xss-lint: disable=mako-missing-default
 <%!
 from django.utils.translation import ugettext as _
 from openedx.core.djangolib.markup import HTML, Text
@@ -7,28 +6,28 @@ from openedx.core.djangolib.markup import HTML, Text
 
 <section class="outside-app">
   <h1>
-    ${Text(_("There has been an error on the {platform_name} servers")).format(
-        platform_name=HTML(u"<em>{}</em>").format(static.get_platform_name())
+    ${_("There has been an error on the {platform_name} servers").format(
+        platform_name=u"<em>{}</em>".format(static.get_platform_name())
     )}
   </h1>
   <p>
-    ${Text(_("We're sorry, this module is temporarily unavailable. Our staff is working "
+    ${_("We're sorry, this module is temporarily unavailable. Our staff is working "
     "to fix it as soon as possible. Please email us at {tech_support_email} to "
-    "report any problems or downtime.")).format(
-        tech_support_email=HTML(u"<a href=\"mailto:{0}\">{0}</a>").format(static.get_tech_support_email_address())
+    "report any problems or downtime.").format(
+        tech_support_email=u"<a href=\"mailto:{0}\">{0}</a>".format(static.get_tech_support_email_address())
     )}
   </p>
 
 % if staff_access:
-<h1>${_("Details") | h}</h1>
+<h1>${_("Details")}</h1>
 
-<p>${_("Error:") | h}
+<p>${_("Error:")}
 <pre>
 ${error | h}
 </pre>
 </p>
 
-<p>${_("Raw data:") | h}
+<p>${_("Raw data:")}
 
 <pre>${data | h}</pre>
 </p>

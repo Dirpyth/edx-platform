@@ -1,5 +1,4 @@
-## xss-lint: disable=mako-missing-default
-<%page args="credit_status" />
+<%page args="credit_status" expression_filter="h"/>
 <%!
     from django.utils.translation import ugettext as _
     from openedx.core.djangolib.markup import HTML, Text
@@ -86,7 +85,7 @@
         </p>
         <div class="credit-action">
             % if credit_btn_label:
-                <a class="btn credit-btn ${credit_btn_class}" href="${credit_btn_href | h}" target="_blank" data-course-key="${credit_status['course_key'] | h}" data-user="${user.username | h}" data-provider="${credit_status['provider_id'] | h}">
+                <a class="btn credit-btn ${credit_btn_class}" href="${credit_btn_href}" target="_blank" data-course-key="${credit_status['course_key']}" data-user="${user.username}" data-provider="${credit_status['provider_id']}">
                     ${credit_btn_label}
                 </a>
             % endif

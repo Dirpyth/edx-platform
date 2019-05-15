@@ -1,4 +1,3 @@
-## xss-lint: disable=mako-missing-default
 <%!
 from django.urls import reverse
 from django.utils.translation import ugettext as _
@@ -19,7 +18,7 @@ def _message(reqm, message):
             <p class="conditional-message">${_message(reqm, message)}</p>
         % else:
             <p class="conditional-message">
-                ${_("You do not have access to this dependency module.") | h}
+                ${_("You do not have access to this dependency module.")}
             </p>
         % endif
     % endfor
