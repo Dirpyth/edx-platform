@@ -138,7 +138,10 @@
                                   u"EdX, Open edX, and MicroMasters are registered trademarks of edX Inc. "
 
                                   )}
-                                  ${u" | {icp}".format(icp=getattr(settings,'ICP_LICENSE')) if getattr(settings,'ICP_LICENSE',False) else ""}
+                                  ${u" | {icp_sen}".format(icp_sen=footer['icp_sentence'])}
+                                  <a href="${footer['icp_license_link']}">
+                                      ${u" {icp}".format(icp=getattr(settings,'ICP_LICENSE')) if getattr(settings,'ICP_LICENSE',False) else ""}
+                                  </a>
                               </p>
                         </div>
                   </div>

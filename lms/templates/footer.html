@@ -25,7 +25,9 @@
           </nav>
 
           ## Site operators: Please do not remove this paragraph! This attributes back to edX and makes your acknowledgement of edX's trademarks clear.
-          <p class="copyright">${footer['copyright']} ${u" | {icp}".format(icp=getattr(settings,'ICP_LICENSE')) if getattr(settings,'ICP_LICENSE',False) else ""}</p>
+          <p class="copyright">${footer['copyright']} ${u" | {icp_sen}".format(icp_sen=footer['icp_sentence'])}
+              <a href="${footer['icp_license_link']}">${u" {icp}".format(icp=getattr(settings,'ICP_LICENSE')) if getattr(settings,'ICP_LICENSE',False) else ""}</a>
+          </p>
 
           <nav class="navbar legal-nav navbar-expand-sm" aria-label="${_('Legal')}">
             <ul class="navbar-nav">
@@ -99,7 +101,9 @@
         </div>
 
         ## Site operators: Please do not remove this paragraph! This attributes back to edX and makes your acknowledgement of edX's trademarks clear.
-        <p class="copyright">${footer['copyright']} ${u" | {icp}".format(icp=getattr(settings,'ICP_LICENSE')) if getattr(settings,'ICP_LICENSE',False) else ""}</p>
+          <p class="copyright">${footer['copyright']} ${u" | {icp_sen}".format(icp_sen=footer['icp_sentence'])}
+              <a href="${footer['icp_license_link']}">${u" {icp}".format(icp=getattr(settings,'ICP_LICENSE')) if getattr(settings,'ICP_LICENSE',False) else ""}</a>
+          </p>
 
         <nav class="nav-legal" aria-label="${_('Legal')}">
           <ul>

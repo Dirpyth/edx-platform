@@ -178,6 +178,8 @@ class TestFooter(TestCase):
                 'url': 'https://www.edx.org/?utm_medium=affiliate_partner&utm_source=opensource-partner&utm_content=open-edx-partner-footer-link&utm_campaign=open-edx-footer',
                 'text': 'Take free online courses at edX.org',
             },
+            "icp_license_link": "http://www.beian.miit.gov.cn",
+            "icp_sentence": u"深圳市恒宇博科技有限公司 ",
         }
         self.assertEqual(actual_footer, expected_footer)
 

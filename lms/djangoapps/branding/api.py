@@ -1,3 +1,5 @@
+# - *- coding: utf- 8 - *-
+
 """EdX Branding API
 
 Provides a way to retrieve "branded" parts of the site,
@@ -115,6 +117,8 @@ def get_footer(is_secure=True, language=settings.LANGUAGE_CODE):
             "url": "https://www.edx.org/?utm_medium=affiliate_partner&utm_source=opensource-partner&utm_content=open-edx-partner-footer-link&utm_campaign=open-edx-footer",
             "text": _("Take free online courses at edX.org"),
         },
+        "icp_license_link": "http://www.beian.miit.gov.cn",
+        "icp_sentence": u"深圳市恒宇博科技有限公司 ",
     }
 
 
